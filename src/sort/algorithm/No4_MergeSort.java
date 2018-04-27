@@ -2,6 +2,7 @@ package sort.algorithm;
 
 /**
  * Created by cecillee on 18/5/2017.
+ * nlogn
  */
 public class No4_MergeSort {
 

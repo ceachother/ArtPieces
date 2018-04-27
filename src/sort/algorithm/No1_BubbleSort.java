@@ -2,6 +2,7 @@ package sort.algorithm;
 
 /**
  * Created by cecillee on 17/5/2017.
+ * n^2
  */
 public class No1_BubbleSort {
 

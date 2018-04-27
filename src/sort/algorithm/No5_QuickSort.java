@@ -2,6 +2,8 @@ package sort.algorithm;
 
 /**
  * Created by cecillee on 17/5/2017.
+ * ave nlogn
+ * worst n^2
  */
 //partition-exchange sort
 public class No5_QuickSort {
