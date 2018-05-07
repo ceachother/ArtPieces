@@ -27,6 +27,7 @@ public class No3_2_HeapSort {
     {
         for(int i = lastPtr; i > 0 ; i--)
         {
+            //start from the last node and its parent
             int parent = (i-1)/2;
             int child;
             //if parent swap with the child, the child should compare to its child
@@ -43,6 +44,8 @@ public class No3_2_HeapSort {
                     Util.swap(a, child, parent);
                 }
                 //if parent is the largest, then no need to build the maximum child heap
+                //because the process is from bottom to top, so the children are alreay
+                //bigger than their's children
                 else {
                     break;
                 }
