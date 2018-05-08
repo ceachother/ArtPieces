@@ -1,5 +1,7 @@
 package sort.algorithm;
 
+import static sort.algorithm.Util.swap;
+
 /**
  * Created by cecillee on 17/5/2017.
  * ave nlogn
@@ -31,13 +33,13 @@ public class No5_QuickSort {
         for (int i = left + 1; i <= right; i++) {
             if (a[i] < pivot) {
                 // put the smaller in order after the pivot.
-                Util.swap(a, i, j++);
+                swap(a, i, j++);
             }
         }
         // swap the pivot and the last value that less than the pivot
         // to make sure that all elements with values less than the
         // pivot come before the pivot.
-//        Util.swap(a, j, pivot);
+        swap(a, j-1, left);
 
         //3.Recursively apply the above steps to the sub-array of elements with smaller values and
         // separately to the sub-array of elements with greater values.
@@ -77,7 +79,7 @@ public class No5_QuickSort {
             //then both i and j are 1, and the recursion will go into (int[] a, 1, 0) and (int[] a, 1, 2)
             //the first will return, but the second will be just like this original one and run forever
             if (i <= j) {
-                Util.swap(a, i, j);
+                swap(a, i, j);
                 i++;
                 j--;
             }
@@ -91,5 +93,38 @@ public class No5_QuickSort {
         sort(a, left, i-1);
         sort(a, i, right);
 
+    }
+
+
+    public static int findKthLargest(int[] nums, int k) {
+        int index = quick(nums, 0, nums.length-1, nums.length-k);
+        System.out.println("5th max:" + nums[index]);
+        return nums[index];
+    }
+
+    private static int quick(int[] nums, int begin, int end, int k) {
+        if(begin == end) {
+            return begin;
+        }
+        int pivot = end;
+        int i = begin;
+        int j = end-1;
+        while(i<=j) {
+            if(nums[i] > nums[pivot]) {
+                swap(nums, i, j);
+                j--;
+            } else {
+                i++;
+            }
+        }
+        swap(nums, j+1, pivot);
+        if(j+1 == k) {
+            return j+1;
+        }
+        if(j+1 > k) {
+            return quick(nums, begin, j, k);
+        } else {
+            return quick(nums, j+2, end, k);
+        }
     }
 }
