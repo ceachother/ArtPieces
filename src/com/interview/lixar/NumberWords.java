@@ -1,4 +1,4 @@
-package com.lixar.interview;
+package com.interview.lixar;
 
 
 public class NumberWords {

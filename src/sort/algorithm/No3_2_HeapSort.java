@@ -2,6 +2,7 @@ package sort.algorithm;
 
 /**
  * Created by cecillee on 18/5/2017.
+ * build max heap in every iteration
  * nlogn
  */
 public class No3_2_HeapSort {
@@ -31,7 +32,7 @@ public class No3_2_HeapSort {
             int parent = (i-1)/2;
             int child;
             //if parent swap with the child, the child should compare to its child
-            //parent*2+1(which is his left child) can not over the size of the heap
+            //parent*2+1(which is his left child) can not over the size of the heap(the array)
             for (; parent * 2 + 1 < lastPtr; parent = child) {
                 child = parent * 2 + 1;
                 //if the left child is the last element(which child = lastPtr)
@@ -44,8 +45,8 @@ public class No3_2_HeapSort {
                     Util.swap(a, child, parent);
                 }
                 //if parent is the largest, then no need to build the maximum child heap
-                //because the process is from bottom to top, so the children are alreay
-                //bigger than their's children
+                //because the process is from bottom to top, so the children are already
+                //bigger than their children
                 else {
                     break;
                 }

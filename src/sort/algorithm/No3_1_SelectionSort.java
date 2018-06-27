@@ -3,6 +3,7 @@ package sort.algorithm;
 /**
  * Created by cecillee on 18/5/2017.
  * find the min index in every loop, then switch it with the i th number
+ * n^2
  */
 public class No3_1_SelectionSort {
 

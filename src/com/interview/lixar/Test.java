@@ -1,4 +1,4 @@
-package com.lixar.interview;
+package com.interview.lixar;
 
 /**
  * Created by cecillee on 31/7/2017.
