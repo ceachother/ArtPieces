@@ -12,9 +12,11 @@ public class Util {
     }
 
     public static void printArray(int[] a) {
+        StringBuilder sb = new StringBuilder();
         for (int i = 0; i < a.length ; i++){
-            System.out.println(a[i]);
+            sb.append(a[i]+" ");
         }
+        System.out.println(sb.toString());
     }
 
 }
